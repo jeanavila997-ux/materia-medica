@@ -1,0 +1,8 @@
+# Obsidian (a config fica no vault, não neste repositório)
+.obsidian/
+.trash/
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
