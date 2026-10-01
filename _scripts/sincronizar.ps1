@@ -16,13 +16,15 @@ $ErrorActionPreference = 'Stop'
 
 $Repo = Split-Path $PSScriptRoot -Parent
 if (-not (Test-Path (Join-Path $Repo '.git'))) {
-    throw "'$Repo' não é um clone git. Rode antes o instalar-no-vault.ps1."
+    throw "'$Repo' não é um clone git. Rode antes o configurar-pasta.ps1 (ou o instalar-no-vault.ps1)."
 }
 Set-Location $Repo
 $antes = git rev-parse HEAD
 
 # 1. Commit das edições locais
 if (@(git status --porcelain).Count -gt 0) {
+    if (-not (git config user.name)) { git config user.name (Read-Host 'Seu nome para os registros do git') }
+    if (-not (git config user.email)) { git config user.email (Read-Host 'Seu e-mail do GitHub') }
     git add -A
     git commit -m $Mensagem | Out-Null
     if ($LASTEXITCODE -ne 0) { throw 'Falha no commit das edições locais.' }
@@ -32,7 +34,10 @@ if (@(git status --porcelain).Count -gt 0) {
 # 2. Trazer do GitHub
 git pull --rebase --quiet
 if ($LASTEXITCODE -ne 0) {
+    # Windows PowerShell 5.1 trata stderr redirecionado como erro fatal com 'Stop'
+    $ErrorActionPreference = 'Continue'
     git rebase --abort 2>$null
+    $ErrorActionPreference = 'Stop'
     throw 'Conflito: a mesma nota foi alterada aqui e no GitHub. Nada foi perdido; resolva a nota em conflito (ou peça ajuda ao Claude) e rode de novo.'
 }
 

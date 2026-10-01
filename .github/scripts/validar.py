@@ -8,7 +8,7 @@ from pathlib import Path
 import yaml
 
 ROOT = Path(__file__).resolve().parents[2]
-IGNORAR = {"_templates", ".github", "_scripts", ".git"}
+IGNORAR = {"_templates", ".github", "_scripts", ".git", ".obsidian", ".trash"}
 
 OBRIGATORIOS = {
     "planta": ["nome_comum", "nome_cientifico", "familia", "principios_ativos", "evidencia", "risco", "status", "revisado"],

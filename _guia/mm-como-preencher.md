@@ -11,7 +11,7 @@ revisado: 2026-09-30
 3. **Composto químico** que aparece em várias plantas (ex.: lapachol) → `compostos/` com `tpl-composto`. Assim a ficha da planta só linka o composto, sem repetir os dados.
 4. **Remédio homeopático** → `homeopatia/` com `tpl-homeopatico`, linkando a planta de origem.
 
-Configure uma vez: **Configurações → Plugins principais → Templates → Pasta de templates** = `09-materia-medica/_templates`. Depois é só usar *Inserir template* numa nota nova.
+Configure uma vez: **Configurações → Plugins principais → Templates → Pasta de templates** = `_templates` (vault próprio em `D:\materia-medica` — o `configurar-pasta.ps1` já deixa isso pronto) ou `09-materia-medica/_templates` (se a pasta estiver dentro de outro vault). Depois é só usar *Inserir template* numa nota nova.
 
 Ou peça ao Claude: **"cria a ficha de [planta/medicamento] na matéria médica"**. Ele pesquisa, preenche o template e entrega o `.md` pronto.
 

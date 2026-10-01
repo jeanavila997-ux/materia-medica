@@ -25,51 +25,57 @@ Base pessoal e veterinária de plantas medicinais e medicamentos. Cada item é u
 ## Plantas
 ```dataview
 TABLE WITHOUT ID file.link AS "Planta", nome_cientifico AS "Nome científico", principios_ativos AS "Princípios ativos", evidencia AS "Evidência", risco AS "Risco", status AS "Status"
-FROM "09-materia-medica/plantas"
+FROM ""
+WHERE type = "planta" AND !contains(file.folder, "_templates")
 SORT file.name ASC
 ```
 
 ## Fármacos
 ```dataview
 TABLE WITHOUT ID file.link AS "Fármaco", classe AS "Classe", especies AS "Espécies", carencia AS "Carência", risco AS "Risco", status AS "Status"
-FROM "09-materia-medica/farmacos"
+FROM ""
+WHERE type = "farmaco" AND !contains(file.folder, "_templates")
 SORT file.name ASC
 ```
 
 ## Compostos
 ```dataview
 TABLE WITHOUT ID file.link AS "Composto", classe_quimica AS "Classe", encontrado_em AS "Encontrado em", dl50 AS "DL50", meia_vida AS "Meia-vida"
-FROM "09-materia-medica/compostos"
+FROM ""
+WHERE type = "composto" AND !contains(file.folder, "_templates")
 SORT file.name ASC
 ```
 
 ## Homeopatia
 ```dataview
 TABLE WITHOUT ID file.link AS "Remédio", origem AS "Origem", dinamizacoes AS "Dinamizações", evidencia_clinica AS "Evidência clínica"
-FROM "09-materia-medica/homeopatia"
+FROM ""
+WHERE type = "homeopatico" AND !contains(file.folder, "_templates")
 SORT file.name ASC
 ```
 
 ## Consultas úteis
+*Os painéis filtram pelo campo `type` das fichas, então funcionam com a pasta como vault próprio (`D:\materia-medica`) ou dentro de outro vault.*
+
 **Uso veterinário por espécie** (troque `"bovino"` por cao, gato, equino…):
 ```dataview
 TABLE WITHOUT ID file.link AS "Item", type AS "Tipo", vias AS "Vias", carencia AS "Carência", risco AS "Risco"
-FROM "09-materia-medica/plantas" OR "09-materia-medica/farmacos"
-WHERE contains(especies, "bovino")
+FROM ""
+WHERE (type = "planta" OR type = "farmaco") AND !contains(file.folder, "_templates") AND contains(especies, "bovino")
 ```
 
 **Risco alto ou moderado:**
 ```dataview
 TABLE WITHOUT ID file.link AS "Item", risco AS "Risco", dl50 AS "DL50"
-FROM "09-materia-medica/plantas" OR "09-materia-medica/farmacos"
-WHERE risco = "alto" OR risco = "moderado"
+FROM ""
+WHERE (type = "planta" OR type = "farmaco") AND !contains(file.folder, "_templates") AND (risco = "alto" OR risco = "moderado")
 ```
 
 **Fichas em rascunho e pendências abertas:**
 ```dataview
 TASK
-FROM "09-materia-medica/plantas" OR "09-materia-medica/farmacos" OR "09-materia-medica/compostos" OR "09-materia-medica/homeopatia"
-WHERE !completed
+FROM ""
+WHERE !completed AND contains(list("planta", "farmaco", "composto", "homeopatico"), type) AND !contains(path, "_templates")
 GROUP BY file.link
 ```
 
