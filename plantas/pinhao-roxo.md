@@ -9,16 +9,16 @@ principios_ativos: ["jatrofona (diterpeno)", "jatropholonas A e B", "jatrofatrio
 uso: [humano, veterinario]
 especies: [humano, bovino]
 vias: [oral, topica]
-acoes: [anti-inflamatoria, analgesica, anticoagulante, antioxidante, antimicrobiana, hipotensora, anti-veneno-botropico, citotoxica-in-vitro]
+acoes: [anti-inflamatoria, analgesica, anticoagulante, antioxidante, antimicrobiana, hipotensora, anti-veneno-botropico, citotoxica-in-vitro, antidiarreica, hepatoprotetora-em-modelo-especifico]
 evidencia: pre-clinica
 risco: alto
-dl50: "sem DL50 de dose única confiável para a espécie. Toxicidade crônica: extrato etanólico das partes aéreas VO em ratos Wistar (13 semanas) matou 46,6% dos machos a 405 mg/kg/dia e 13,3% a 135 mg/kg/dia (Oliveira/Souza et al., RBFar)"
+dl50: "sem DL50 de dose única confiável para a espécie. Toxicidade crônica: extrato etanólico das partes aéreas VO em ratos Wistar (13 semanas) matou 46,6% dos machos a 405 mg/kg/dia e 13,3% a 135 mg/kg/dia (Oliveira/Souza et al., RBFar). Toxicidade reprodutiva: extrato metanólico VO reduziu motilidade/concentração espermática em ratos Wistar (Ubah et al. 2016)"
 meia_vida: "sem dados — nenhum estudo farmacocinético da planta ou dos compostos isolados foi localizado"
 carencia: "sem dados — não há período de carência estabelecido"
 status_br: "RENISUS (pinhão-roxo). Sem fitoterápico registrado na Anvisa. Sem monografia no Formulário de Fitoterápicos"
 homeopatia: nao-encontrada
 status: rascunho
-revisado: 2026-09-30
+revisado: 2026-10-01
 tags: [materia-medica, planta, euphorbiaceae, toxica]
 aliases: ["pião-roxo", "bellyache bush", "Jatropha gossypiifolia", "mamoninha"]
 ---
@@ -67,8 +67,9 @@ aliases: ["pião-roxo", "bellyache bush", "Jatropha gossypiifolia", "mamoninha"]
 | Antioxidante | Sequestro de radicais (hidroxil, peroxil, superóxido), quelação de metais, poder redutor | *In vitro* |
 | Anti-veneno botrópico | Extrato aquoso da folha inibe ações enzimáticas e locais do veneno de *Bothrops jararaca* (hemorragia, edema, coagulação) | *In vitro* e camundongos — Félix-Silva et al. 2014 |
 | Hipotensora / vasorrelaxante | Redução de pressão arterial e relaxamento vascular | Ratos |
-| Anti-inflamatória / antinociceptiva | Atribuída a amirinas, lupeol e ácido ferúlico | Pré-clínica (animais) |
-| Antimicrobiana | Extratos e frações | *In vitro* |
+| Anti-inflamatória (edema de pata por carragenina) | Extrato aquoso por infusão (10% p/v) das folhas, **oral 50/100/200 mg/kg**: ~55% de inibição a 100 mg/kg e ~51% a 200 mg/kg, comparável à indometacina; **tópico em lipogel 5% p/p**: ~54% de inibição, superior à indometacina e ao diclofenaco tópicos | Rato Wistar — estudo de atividade anti-inflamatória/anti-artrite |
+| Antinociceptiva | Atribuída a amirinas, lupeol e ácido ferúlico | Pré-clínica (animais) |
+| Antimicrobiana | Extratos e frações, inclusive contra patógenos orais (bochecho experimental) | *In vitro* — Idowu et al. 2021 |
 | Citotóxica / antitumoral | Jatrofona (ciclo redox / alquilação) | *In vitro* |
 
 > O uso tradicional para **dor de dente** tem plausibilidade (presença de compostos anti-inflamatórios/analgésicos), mas o alívio relatado também pode vir da **irritação/cauterização química do látex sobre a mucosa** *(inferência fisiopatológica)*, não de analgesia benigna comprovada.
@@ -122,6 +123,7 @@ flowchart LR
 | Látex | Humano (relatos) | Tópico/mucosa | **Cáustico e inflamatório** para pele e mucosas | Félix-Silva et al. 2014 |
 | Planta (ingestão) | Humano/animal (relatos) | Oral | Distúrbios gastrointestinais, dor intensa, desidratação, comprometimento renal, alterações cardiovasculares e, em casos graves, manifestações neurológicas | Félix-Silva et al. 2014 |
 | Curcina (semente) | — | — | Lectina inativadora de ribossomo, análoga à ricina (toxicidade por ingestão de sementes) | revisões do gênero |
+| Extrato metanólico | Rato Wistar | Oral (dose não detalhada no resumo) | **Toxicidade reprodutiva:** redução dose-dependente de motilidade e concentração espermática, aumento de anormalidades morfológicas (cabeça/cauda) | Ubah et al. 2016 *(resumo/TLDR; buscar texto integral — pendência)* |
 | DL50 de dose única | — | — | **sem dados confiáveis para a espécie** | — |
 
 **Sinais de intoxicação:** irritação/queimadura de mucosa pelo látex; vômito, dor abdominal e diarreia; desidratação; sinais renais; alterações cardiovasculares; em casos graves, sinais neurológicos.
@@ -136,6 +138,11 @@ flowchart LR
 | Anticoagulante / antitrombótico | Humano (plasma) | Pré-clínica (*in vitro*) | Félix-Silva et al. 2014 |
 | Antídoto local contra veneno de *Bothrops* | Camundongo | Pré-clínica | Félix-Silva et al. 2014 |
 | Hipotensor / vasorrelaxante | Rato | Pré-clínica | revisões |
+| Anti-inflamatória (oral e tópica, carragenina) | Rato Wistar | Pré-clínica (ver doses na seção 4) | Estudo anti-inflamatório/anti-artrite, *Int J Pharm Pharm Sci* |
+| Analgésica, neurofarmacológica e antidiarreica | Camundongo | Pré-clínica | Apu et al. 2012 |
+| Antimicrobiana contra patógenos orais (apoio ao uso em dor de dente) | *In vitro* | Pré-clínica | Idowu et al. 2021 |
+| Anticoagulante em sangue (uso laboratorial) | Não especificado no resumo | Pré-clínica (*in vitro*; efeito máximo a 0,1 mL de extrato por mL de sangue) | Oduola et al. 2005 |
+| Hepatoprotetor contra lesão por paracetamol | Camundongo | Pré-clínica (**contrasta com a hepatotoxicidade crônica da seção 7** — efeito depende de dose/duração) | Temdie et al. 2023 |
 | Tratamento odontológico validado | Humano | **Sem demonstração clínica** | Félix-Silva et al. 2014 |
 
 ## 9. Atenção
@@ -145,6 +152,7 @@ flowchart LR
 - **Espécies sensíveis:**
   - **Bovinos/ruminantes:** sem dado de carência nem de segurança; planta tóxica → risco de intoxicação e de resíduo.
   - **Gatos:** sem estudo; cautela redobrada *(inferência)* pela glicuronidação deficiente e sensibilidade a oxidantes.
+- **Toxicidade reprodutiva (machos):** extrato metanólico por via oral causou queda dose-dependente de motilidade e concentração espermática em ratos Wistar, com mais anormalidades morfológicas (Ubah et al. 2016). **Extrapolação para touros reprodutores é apenas inferência** — não há estudo em bovinos —, mas é motivo de cautela extra em áreas de pasto/cerca onde a planta cresça perto de reprodutores.
 - **Carência (animais de produção):** **não existe** período de carência estabelecido → alerta de resíduo em carne/leite.
 - **Látex:** cáustico — não aplicar em pele lesada, olhos ou mucosas.
 - **Sementes:** contêm curcina (lectina tóxica); ingestão perigosa.
@@ -165,6 +173,13 @@ flowchart LR
 | Félix-Silva et al. 2014 (anti-veneno) | *In vitro* + camundongos | Camundongo | — | Extrato aquoso da folha inibe ações enzimáticas e locais do veneno de *Bothrops jararaca* | [PMC4134247](https://pmc.ncbi.nlm.nih.gov/articles/PMC4134247/) |
 | Oliveira/Souza et al. (toxicidade crônica) | Toxicologia oral 13 semanas | Rato Wistar | — | Letalidade alta (46,6% machos a 405 mg/kg); dano hepático, renal e pulmonar; conclui risco/benefício desfavorável | [Rev Bras Farmacogn (Scielo)](https://www.scielo.br/j/rbfar/a/NdTrGMsdqsy7FDM5pM8ZdxR/?lang=en) |
 | Revisão fitoquímica (BJPS) | Revisão / caracterização | — | — | Perfil de compostos fenólicos, triterpenos e atividades | [Braz J Pharm Sci (Embrapa/Alice)](https://www.alice.cnptia.embrapa.br/alice/bitstream/doc/1121639/1/21759790bjps56e17262.pdf) |
+| Anti-inflamatória/anti-artrite | Carragenina, oral + tópico | Rato Wistar | — | Inibição ~55% (oral 100 mg/kg) e ~54% (tópico 5% lipogel), superando indometacina/diclofenaco no tópico | [Int J Pharm Pharm Sci, Vol 6 Issue 6](https://innovareacademics.in/journal/ijpps/Vol6Issue6/9331.pdf) |
+| Apu et al. 2012 | Analgesia, neurofarmacologia, antidiarreico | Camundongo | — | Atividade analgésica, neurofarmacológica e antidiarreica da folha (texto integral não recuperado — ver pendências) | [PMC3894733](https://pmc.ncbi.nlm.nih.gov/articles/PMC3894733) |
+| Idowu et al. 2021 | Antimicrobiano (bochecho experimental) | *In vitro* | — | Extrato da folha com atividade antimicrobiana contra patógenos orais | [AJOL — J Pharm Bioresources](https://ajol.info/index.php/jpb/article/view/218306) |
+| Oduola et al. 2005 | Anticoagulante/bioquímico | Não especificado no resumo | — | Efeito anticoagulante máximo a 0,1 mL de extrato/mL de sangue | [AJOL](https://ajol.info/index.php/ajb/article/view/15165) |
+| Ubah et al. 2016 | Toxicidade reprodutiva | Rato Wistar | — | Queda dose-dependente de motilidade/concentração espermática; mais anormalidades morfológicas | *(link direto pendente — só o resumo/TLDR foi localizado)* |
+| Temdie et al. 2023 | Hepatoprotetor (lesão por paracetamol) | Camundongo | — | Extratos aquosos reduziram a lesão hepática induzida por paracetamol | *(link direto pendente)* |
+| da Silva Silveira et al. 2020 | Análise química UHPLC-MS/MS | — | — | Identificação de compostos fenólicos e triterpênicos; forte atividade antioxidante *in vitro* contra espécies reativas de oxigênio | *(link direto pendente)* |
 
 ## 12. Status regulatório
 - **Brasil:**
@@ -178,10 +193,13 @@ flowchart LR
 - [ ] Confirmar autor/ano e dados completos do estudo de toxicidade crônica (texto integral no Scielo RBFar)
 - [ ] DL50 de dose única por via e espécie (nenhuma localizada)
 - [ ] Qualquer dado de farmacocinética/ADME e de meia-vida (nenhum localizado)
-- [ ] Doses de modelos pré-clínicos anti-inflamatório/antinociceptivo (espécie, via, mg/kg)
 - [ ] Banco de produtos Anvisa e MAPA
 - [ ] Farmacocinética em ruminantes (efeito do rúmen)
 - [ ] Verificar existência de matéria médica homeopática específica de *J. gossypiifolia*
+- [ ] Recuperar texto integral de Apu et al. 2012 (PMC3894733) para doses exatas (analgesia/antidiarreico, camundongo)
+- [ ] Encontrar link direto de Ubah et al. 2016 (toxicidade reprodutiva, rato) — só o resumo/TLDR foi localizado
+- [ ] Encontrar link direto de Temdie et al. 2023 (hepatoproteção, camundongo) e da Silva Silveira et al. 2020 (UHPLC-MS/MS)
+- [ ] Confirmar espécie/matriz exata do estudo de Oduola et al. 2005 (anticoagulante) — resumo não especifica
 
 ## Referências
 1. Félix-Silva J, Giordani RB, Silva-Jr AA, et al. *Jatropha gossypiifolia* L. (Euphorbiaceae): A Review of Traditional Uses, Phytochemistry, Pharmacology, and Toxicology of This Medicinal Plant. *Evid Based Complement Alternat Med* 2014;2014:369204. https://onlinelibrary.wiley.com/doi/10.1155/2014/369204
@@ -190,6 +208,13 @@ flowchart LR
 4. Chronic toxicologic study of the ethanolic extract of the aerial parts of *Jatropha gossypiifolia* in rats. *Rev Bras Farmacogn*. https://www.scielo.br/j/rbfar/a/NdTrGMsdqsy7FDM5pM8ZdxR/?lang=en
 5. Revisão fitoquímica/farmacológica de *J. gossypiifolia*. *Braz J Pharm Sci* (cópia Embrapa/Alice). https://www.alice.cnptia.embrapa.br/alice/bitstream/doc/1121639/1/21759790bjps56e17262.pdf
 6. Ministério da Saúde — RENISUS (Relação Nacional de Plantas Medicinais de Interesse ao SUS).
+7. Assessment of anti-inflammatory and anti-arthritis activity of *Jatropha gossypiifolia* in rats. *Int J Pharm Pharm Sci* Vol 6 Issue 6. https://innovareacademics.in/journal/ijpps/Vol6Issue6/9331.pdf
+8. Apu AS et al. Evaluation of analgesic, neuropharmacological and anti-diarrheal potential of *Jatropha gossypiifolia* (Linn.) leaves in mice. 2012. https://pmc.ncbi.nlm.nih.gov/articles/PMC3894733
+9. Idowu AO et al. Herbal mouthwash formulated with the leaf extract of *Jatropha gossypiifolia* Linn. exhibited in vitro antimicrobial activity against selected oral pathogens. *J Pharm Bioresources* 2021. https://ajol.info/index.php/jpb/article/view/218306
+10. Oduola T, Avwioro OG, Ayanniyi TB. Suitability of the leaf extract of *Jatropha gossypifolia* as an anticoagulant for biochemical and haematological analyses. 2005. https://ajol.info/index.php/ajb/article/view/15165
+11. Ubah SA et al. Semen characteristics of Wistar rats treated with methanolic extract of *Jatropha gossypifolia*. 2016 (resumo/TLDR consultado via Semantic Scholar; link direto pendente).
+12. Temdie RJG et al. Potential curative effects of aqueous extracts of *Cissus quadrangularis* and *Jatropha gossypiifolia* on acetaminophen-induced liver injury in mice. *Curr Ther Res* 2023 (resumo/TLDR consultado; link direto pendente).
+13. da Silva Silveira R et al. Determination of phenolic and triterpenic compounds in *Jatropha gossypiifolia* L. by UHPLC-MS/MS. 2020 (resumo/TLDR consultado; link direto pendente).
 
 ---
 Voltar: [[00-materia-medica-home|Matéria Médica]]

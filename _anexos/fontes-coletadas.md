@@ -17,6 +17,13 @@ o conteúdo já foi extraído e usado na ficha correspondente.
 - [x] [Toxicidade crônica — resumo (Rev Bras Farmacogn, Scielo)](https://www.scielo.br/j/rbfar/a/NdTrGMsdqsy7FDM5pM8ZdxR/?lang=en)
 - [x] [Revisão fitoquímica (Braz J Pharm Sci / Embrapa Alice)](https://www.alice.cnptia.embrapa.br/alice/bitstream/doc/1121639/1/21759790bjps56e17262.pdf)
 - [ ] [Jatropha gossypiifolia and its biologically active metabolites: a mini review (ScienceDirect)](https://www.sciencedirect.com/science/article/abs/pii/S0378874118319780) — não acessado (paywall)
+- [x] [Assessment of anti-inflammatory and anti-arthritis activity (Int J Pharm Pharm Sci)](https://innovareacademics.in/journal/ijpps/Vol6Issue6/9331.pdf) — dados completos extraídos (rato Wistar, oral e tópico)
+- [ ] [Apu et al. 2012 — analgesia/neurofarmacologia/antidiarreico (PMC3894733)](https://pmc.ncbi.nlm.nih.gov/articles/PMC3894733) — bloqueado por reCAPTCHA; só o título/achado geral entrou na ficha, falta dose exata
+- [x] [Idowu et al. 2021 — bochecho antimicrobiano (AJOL)](https://ajol.info/index.php/jpb/article/view/218306)
+- [x] [Oduola et al. 2005 — anticoagulante (AJOL)](https://ajol.info/index.php/ajb/article/view/15165)
+- [ ] Ubah et al. 2016 — toxicidade reprodutiva em ratos — só resumo/TLDR do Semantic Scholar, falta achar o link direto do artigo
+- [ ] Temdie et al. 2023 — hepatoproteção em camundongo — só resumo/TLDR, falta link direto
+- [ ] da Silva Silveira et al. 2020 — UHPLC-MS/MS — só resumo/TLDR, falta link direto
 
 ## Ipê-roxo (*Handroanthus impetiginosus*)
 - [x] Morrison et al. 1970 — toxicologia oral do lapachol (DL50) — ver referências em [[ipe-roxo]]
