@@ -8,7 +8,7 @@ from pathlib import Path
 import yaml
 
 ROOT = Path(__file__).resolve().parents[2]
-IGNORAR = {"_templates", ".github", "_scripts", ".git", ".obsidian", ".trash"}
+IGNORAR = {"_templates", ".github", "_scripts", ".git", ".obsidian", ".trash", "_imagens", "site", "_site_builder"}
 
 OBRIGATORIOS = {
     "planta": ["nome_comum", "nome_cientifico", "familia", "principios_ativos", "evidencia", "risco", "status", "revisado"],
@@ -17,6 +17,7 @@ OBRIGATORIOS = {
     "homeopatico": ["nome_homeopatico", "origem", "evidencia_clinica", "status", "revisado"],
     "moc": [],
     "guia": [],
+    "fontes": [],
 }
 ESCALAS = {
     "evidencia": {"tradicional", "pre-clinica", "clinica-preliminar", "clinica-moderada", "clinica-forte"},

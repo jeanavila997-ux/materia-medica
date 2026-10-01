@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }} — Matéria Médica</title>
+<link rel="stylesheet" href="{{ 'style.css' if folder == '.' else '../style.css' }}">
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  function initMermaid() {
+    const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    mermaid.initialize({ startOnLoad: true, theme: dark ? 'dark' : 'default' });
+  }
+  document.addEventListener('DOMContentLoaded', initMermaid);
+</script>
+</head>
+<body>
+<div class="wrap">
+  <nav class="crumbs"><a href="{{ 'index.html' if folder == '.' else '../index.html' }}">← Matéria Médica</a></nav>
+  <header class="site-header">
+    <h1>{{ title }} {{ badge_risco }} {{ badge_status }}</h1>
+    {% if fm.get('nome_cientifico') %}<div class="sub"><em>{{ fm.nome_cientifico }}</em></div>{% endif %}
+  </header>
+  {% if image %}
+  <img class="hero-img" src="{{ ('' if folder == '.' else '../') + '_imagens/' + image }}" alt="{{ title }}">
+  {% endif %}
+  <article>
+    {{ body }}
+  </article>
+  <footer class="site-footer">
+    Conteúdo informativo e educacional. Não substitui prescrição de médico ou médico-veterinário.
+  </footer>
+</div>
+</body>
+</html>

@@ -8,3 +8,5 @@ desktop.ini
 *.tmp
 # Dados de outros plugins/apps que também usam esta pasta (não pertencem à matéria médica)
 .claude/
+# Site gerado — o GitHub Actions reconstrói a cada push (ver _site_builder/)
+/site/

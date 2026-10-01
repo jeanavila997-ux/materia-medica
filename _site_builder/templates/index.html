@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matéria Médica</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site-header">
+    <h1>Matéria Médica — plantas, fármacos e homeopatia</h1>
+    <div class="sub">Base pessoal e veterinária de plantas medicinais e medicamentos. <a href="mm-como-preencher.html">Como preencher as fichas</a></div>
+  </header>
+
+  <input class="search-box" id="buscaFicha" type="search" placeholder="Buscar por nome, composto, classe...">
+
+  <h2>Plantas</h2>
+  {% if tables.planta %}
+  <table data-filtro>
+    <thead><tr><th>Planta</th><th>Nome científico</th><th>Princípios ativos</th><th>Evidência</th><th>Risco</th><th>Status</th></tr></thead>
+    <tbody>
+      {% for n in tables.planta %}
+      <tr>
+        <td class="name-cell">
+          {% set img = find_image(n.slug) %}
+          {% if img %}<img class="thumb" src="_imagens/{{ img }}" alt="">{% endif %}
+          <a href="plantas/{{ n.slug }}.html">{{ (n.fm.nome_comum or [n.slug])[0] }}</a>
+        </td>
+        <td><em>{{ n.fm.nome_cientifico or '' }}</em></td>
+        <td>{{ (n.fm.principios_ativos or []) | map('e') | join(', ') }}</td>
+        <td>{{ n.fm.evidencia or '' }}</td>
+        <td>{{ badge('risco', n.fm.risco or '') }}</td>
+        <td>{{ badge('status', n.fm.status or '') }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}<p class="section-tag">nenhuma ficha ainda</p>{% endif %}
+
+  <h2>Fármacos</h2>
+  {% if tables.farmaco %}
+  <table data-filtro>
+    <thead><tr><th>Fármaco</th><th>Classe</th><th>Espécies</th><th>Carência</th><th>Risco</th><th>Status</th></tr></thead>
+    <tbody>
+      {% for n in tables.farmaco %}
+      <tr>
+        <td class="name-cell">
+          {% set img = find_image(n.slug) %}
+          {% if img %}<img class="thumb" src="_imagens/{{ img }}" alt="">{% endif %}
+          <a href="farmacos/{{ n.slug }}.html">{{ n.slug }}</a>
+        </td>
+        <td>{{ n.fm.classe or '' }}</td>
+        <td>{{ (n.fm.especies or []) | join(', ') }}</td>
+        <td>{{ n.fm.carencia or '' }}</td>
+        <td>{{ badge('risco', n.fm.risco or '') }}</td>
+        <td>{{ badge('status', n.fm.status or '') }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}<p class="section-tag">nenhuma ficha ainda</p>{% endif %}
+
+  <h2>Compostos</h2>
+  {% if tables.composto %}
+  <table data-filtro>
+    <thead><tr><th>Composto</th><th>Classe</th><th>Encontrado em</th><th>DL50</th><th>Meia-vida</th></tr></thead>
+    <tbody>
+      {% for n in tables.composto %}
+      <tr>
+        <td><a href="compostos/{{ n.slug }}.html">{{ n.slug }}</a></td>
+        <td>{{ n.fm.classe_quimica or '' }}</td>
+        <td>{{ (n.fm.encontrado_em or []) | join(', ') }}</td>
+        <td>{{ n.fm.dl50 or '' }}</td>
+        <td>{{ n.fm.meia_vida or '' }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}<p class="section-tag">nenhuma ficha ainda</p>{% endif %}
+
+  <h2>Homeopatia</h2>
+  {% if tables.homeopatico %}
+  <table data-filtro>
+    <thead><tr><th>Remédio</th><th>Origem</th><th>Dinamizações</th><th>Evidência clínica</th></tr></thead>
+    <tbody>
+      {% for n in tables.homeopatico %}
+      <tr>
+        <td><a href="homeopatia/{{ n.slug }}.html">{{ n.slug }}</a></td>
+        <td>{{ n.fm.origem or '' }}</td>
+        <td>{{ n.fm.dinamizacoes or '' }}</td>
+        <td>{{ n.fm.evidencia_clinica or '' }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}<p class="section-tag">nenhuma ficha ainda</p>{% endif %}
+
+  <footer class="site-footer">
+    Conteúdo informativo e educacional. Não substitui prescrição de médico ou médico-veterinário.
+    Gerado automaticamente a partir do vault — <a href="https://github.com/jeanavila997-ux/materia-medica">código-fonte</a>.
+  </footer>
+</div>
+<script>
+  document.getElementById('buscaFicha').addEventListener('input', (e) => {
+    const q = e.target.value.toLowerCase();
+    document.querySelectorAll('table[data-filtro] tbody tr').forEach(tr => {
+      tr.style.display = tr.textContent.toLowerCase().includes(q) ? '' : 'none';
+    });
+  });
+</script>
+</body>
+</html>
